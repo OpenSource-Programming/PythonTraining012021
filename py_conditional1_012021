@@ -1,0 +1,14 @@
+#prompting the user for hours and rate
+hrs = input("Enter Hours:")
+rate = input("Enter Rate:")
+#converting the input into floats
+h = float(hrs)
+r = float(rate)
+#computing regPay and overTimePay
+regPay = h * r
+overTimePay = (h - 40) * (r * 0.5)
+#computing total pay
+if h > 40:
+    print(regPay + overTimePay)
+else:
+    print(regPay)
