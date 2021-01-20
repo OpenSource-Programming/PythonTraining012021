@@ -1,0 +1,11 @@
+fname = input("Enter file name: ")
+fh = open(fname)
+count = 0
+fpval = 0
+for line in fh:
+    if not line.startswith("X-DSPAM-Confidence: ") :
+        continue
+    lineNum = float(line[-6:])
+    count = count + 1
+    fpval = fpval + lineNum
+print('Average spam confidence:', fpval/count)
