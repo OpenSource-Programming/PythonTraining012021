@@ -1,0 +1,1 @@
+print('life is beautiful')
