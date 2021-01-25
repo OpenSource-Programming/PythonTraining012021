@@ -1,0 +1,17 @@
+score = input("Enter Score: ")
+numScore = float(score)
+if numScore < 0.0:
+    print("Too low.")
+if numScore > 1.0:
+    print("Too high.")
+if numScore >= 0.9:
+    print('A')
+elif numScore >= 0.8:
+    print('B')
+elif numScore >= 0.7:
+    print('C')
+elif numScore >= 0.6:
+    print('D')
+else:
+    if numScore < 0.6:
+        print('F')
