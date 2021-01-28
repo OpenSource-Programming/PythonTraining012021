@@ -19,10 +19,11 @@ while True:
     data = uh.read().decode() # changes to UTF-8
     print('Retrieved', len(data), 'characters')
     tree = ET.fromstring(data)
-    counts = tree.findall('.//count')
+    counts = tree.findall('.//count')   
+    print('Count:', len(counts))
     for count in counts:
         count = int(count.text)
         count_sum += count
     
-    print('Count:', len(counts))
+ 
     print('Sum:', count_sum)
