@@ -16,12 +16,12 @@ while True:
     if len(url) < 1: break
     print('Retrieving', url)
     uh = urllib.request.urlopen(url, context=ctx)
-    data = uh.read()
+    data = uh.read().decode()
     print('Retrieved', len(data), 'characters')
     tree = ET.fromstring(data)
     counts = tree.findall('.//count')
-    for item in tree.iter('count'):
-        count = int(item.text)
+    for count in counts:
+        count = int(count.text)
         count_sum += count
     
     print('Count:', len(counts))
