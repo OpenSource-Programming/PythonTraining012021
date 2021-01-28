@@ -16,7 +16,7 @@ while True:
     if len(url) < 1: break
     print('Retrieving', url)
     uh = urllib.request.urlopen(url, context=ctx)
-    data = uh.read().decode()
+    data = uh.read().decode() # changes to UTF-8
     print('Retrieved', len(data), 'characters')
     tree = ET.fromstring(data)
     counts = tree.findall('.//count')
