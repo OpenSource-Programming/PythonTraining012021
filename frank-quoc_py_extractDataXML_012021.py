@@ -16,13 +16,21 @@ while True:
     if len(url) < 1: break
     print('Retrieving', url)
     uh = urllib.request.urlopen(url, context=ctx)
+<<<<<<< HEAD
     data = uh.read().decode()
     print('Retrieved', len(data), 'characters')
     tree = ET.fromstring(data)
     counts = tree.findall('.//count')
+=======
+    data = uh.read().decode() # changes to UTF-8
+    print('Retrieved', len(data), 'characters')
+    tree = ET.fromstring(data)
+    counts = tree.findall('.//count')   
+    print('Count:', len(counts))
+>>>>>>> bbd002f54d97175441e4abde2d3ce1f1f926b6f3
     for count in counts:
         count = int(count.text)
         count_sum += count
     
-    print('Count:', len(counts))
+ 
     print('Sum:', count_sum)
