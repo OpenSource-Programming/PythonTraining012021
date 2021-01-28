@@ -63,4 +63,4 @@ for _ in range(count):
     tags = soup('a')
     url = tags[pos-1].get('href', None) # ind = pos - 1
     print('Retrieving:', url)
-print(tags[pos-1].contents[0])
+print(tags[pos-1].content[0])
